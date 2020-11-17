@@ -22,3 +22,8 @@ body {
   z-index: 1000;
   padding: 15px;
 }
+
+.actions input {
+  display: block;
+  margin-bottom: 10px;
+}

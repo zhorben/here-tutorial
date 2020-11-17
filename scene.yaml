@@ -16,26 +16,26 @@ sources:
     max_zoom: 16
     url_params:
       access_token: ALkC8s2NS8qUtcelufPlYgA
-  fountains:
-    url: https://xyz.api.here.com/hub/spaces/WbEUHaXC/tile/web/{z}_{x}_{y}
+  offices:
+    url: https://xyz.api.here.com/hub/spaces/eaP0TAuA/tile/web/{z}_{x}_{y}
     type: GeoJSON
     url_params:
       access_token: ALkC8s2NS8qUtcelufPlYgA
 
 layers:
+  offices:
+    data: { source: offices }
+    draw:
+      points:
+        color: purple
+        size: 15px
+        interactive: true
   earth:
     data: { source: xyz_osm }
     draw:
       polygons:
         order: function() { return feature.sort_rank; }
         color: "#ddeeee"
-  fountains:
-    data: { source: fountains }
-    draw:
-      points:
-        color: purple
-        size: 15px
-        interactive: true
 
   landuse:
     data: { source: xyz_osm }

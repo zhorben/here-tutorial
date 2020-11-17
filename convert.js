@@ -1,9 +1,22 @@
 const fs = require('fs')
 const jobs = require('./job_list.json')
 
-const features = jobs.map(({ latitude, longitude }) => ({
+const features = jobs.map(({
+  latitude,
+  longitude,
+  City,
+  ST,
+  ZIP,
+  Street,
+  Demand
+}) => ({
   type: "Feature",
-  properties: {},
+  properties: {
+    name: Street,
+    city: `${City}, ${ST}`,
+    demand: Demand,
+    zip: ZIP
+  },
   geometry: {
     type: "Point",
     coordinates: [longitude, latitude]
